@@ -1,0 +1,120 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Music Assistant",
+        "description": "Connect to the Music Assistant server that runs the Party plugin.",
+        "data": {
+          "base_url": "Server URL",
+          "token": "API token"
+        },
+        "data_description": {
+          "base_url": "For example https://music.local or http://192.168.1.10:8095",
+          "token": "A long-lived access token created in Music Assistant (Settings → Users → Tokens)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Update Music Assistant token",
+        "description": "The token for {base_url} was rejected. Enter a new API token.",
+        "data": {
+          "token": "API token"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the server",
+      "invalid_auth": "The server rejected the token",
+      "not_music_assistant": "The URL does not appear to be a Music Assistant server",
+      "party_provider_missing": "Connected, but the Party plugin is not enabled on this Music Assistant server"
+    },
+    "abort": {
+      "already_configured": "This Music Assistant server is already configured",
+      "reauth_successful": "Token updated"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Music Assistant Party options",
+        "data": {
+          "scan_interval": "Poll interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "button": {
+      "skip_track": {"name": "Skip current track"}
+    },
+    "number": {
+      "party_duration": {"name": "Party duration"},
+      "add_queue_limit": {"name": "Add to queue limit"},
+      "add_queue_refill_minutes": {"name": "Add to queue refill time"},
+      "boost_limit": {"name": "Boost limit"},
+      "boost_refill_minutes": {"name": "Boost refill time"},
+      "skip_song_limit": {"name": "Skip limit"},
+      "skip_song_refill_minutes": {"name": "Skip refill time"}
+    },
+    "select": {
+      "party_audio_mode": {"name": "Audio mode"},
+      "party_player": {"name": "Party player"},
+      "request_badge_color": {"name": "Request badge color"},
+      "boost_badge_color": {"name": "Boost badge color"}
+    },
+    "sensor": {
+      "party_url": {"name": "Party URL"},
+      "party_player": {"name": "Active party player"}
+    },
+    "switch": {
+      "party_mode": {"name": "Party mode"},
+      "enable_add_queue": {"name": "Guests can add to queue"},
+      "enable_boost": {"name": "Guests can boost tracks"},
+      "enable_skip_song": {"name": "Guests can skip tracks"},
+      "enable_rate_limiting": {"name": "Guest rate limiting"},
+      "prevent_duplicate_tracks": {"name": "Prevent duplicate tracks"},
+      "karaoke_mode": {"name": "Karaoke mode"},
+      "highlight_ahead": {"name": "Highlight lyrics ahead"},
+      "anti_burn_in": {"name": "Anti burn-in"},
+      "hide_back_button": {"name": "Hide back button"},
+      "show_progress_bar": {"name": "Show progress bar"}
+    },
+    "text": {
+      "party_name": {"name": "Party name"},
+      "qr_text": {"name": "QR code text"}
+    }
+  },
+  "services": {
+    "add_to_queue": {
+      "name": "Add to party queue",
+      "description": "Adds a media item to the party queue, the same way a guest request does.",
+      "fields": {
+        "uri": {
+          "name": "Media URI",
+          "description": "URI of the media item, for example spotify://track/xxx or library://track/123."
+        },
+        "boost": {
+          "name": "Boost",
+          "description": "Insert at the front of the guest section (play next)."
+        },
+        "config_entry_id": {
+          "name": "Music Assistant server",
+          "description": "Which configured server to target. Only needed when more than one is set up."
+        }
+      }
+    },
+    "boost_queue_item": {
+      "name": "Boost queue item",
+      "description": "Moves an existing queue item into the boosted priority section.",
+      "fields": {
+        "queue_item_id": {
+          "name": "Queue item ID",
+          "description": "The queue_item_id of the item to boost."
+        },
+        "config_entry_id": {
+          "name": "Music Assistant server",
+          "description": "Which configured server to target. Only needed when more than one is set up."
+        }
+      }
+    }
+  }
+}

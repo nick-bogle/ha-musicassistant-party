@@ -1,0 +1,29 @@
+add_to_queue:
+  fields:
+    uri:
+      required: true
+      example: "spotify://track/4uLU6hMCjMI75M1A2tKUQC"
+      selector:
+        text:
+    boost:
+      required: false
+      default: false
+      selector:
+        boolean:
+    config_entry_id:
+      required: false
+      selector:
+        config_entry:
+          integration: music_assistant_party
+
+boost_queue_item:
+  fields:
+    queue_item_id:
+      required: true
+      selector:
+        text:
+    config_entry_id:
+      required: false
+      selector:
+        config_entry:
+          integration: music_assistant_party

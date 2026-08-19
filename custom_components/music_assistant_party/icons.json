@@ -1,0 +1,47 @@
+{
+  "entity": {
+    "button": {
+      "skip_track": {"default": "mdi:skip-next"}
+    },
+    "number": {
+      "party_duration": {"default": "mdi:timer-sand"},
+      "add_queue_limit": {"default": "mdi:playlist-plus"},
+      "add_queue_refill_minutes": {"default": "mdi:timer-refresh-outline"},
+      "boost_limit": {"default": "mdi:rocket-launch"},
+      "boost_refill_minutes": {"default": "mdi:timer-refresh-outline"},
+      "skip_song_limit": {"default": "mdi:skip-forward"},
+      "skip_song_refill_minutes": {"default": "mdi:timer-refresh-outline"}
+    },
+    "select": {
+      "party_audio_mode": {"default": "mdi:speaker-wireless"},
+      "party_player": {"default": "mdi:speaker"},
+      "request_badge_color": {"default": "mdi:palette"},
+      "boost_badge_color": {"default": "mdi:palette-outline"}
+    },
+    "sensor": {
+      "party_url": {"default": "mdi:qrcode"},
+      "party_player": {"default": "mdi:speaker"}
+    },
+    "switch": {
+      "party_mode": {"default": "mdi:party-popper"},
+      "enable_add_queue": {"default": "mdi:playlist-plus"},
+      "enable_boost": {"default": "mdi:rocket-launch-outline"},
+      "enable_skip_song": {"default": "mdi:skip-next-outline"},
+      "enable_rate_limiting": {"default": "mdi:speedometer-slow"},
+      "prevent_duplicate_tracks": {"default": "mdi:content-duplicate"},
+      "karaoke_mode": {"default": "mdi:microphone-variant"},
+      "highlight_ahead": {"default": "mdi:format-color-highlight"},
+      "anti_burn_in": {"default": "mdi:television-shimmer"},
+      "hide_back_button": {"default": "mdi:arrow-left-circle-outline"},
+      "show_progress_bar": {"default": "mdi:progress-clock"}
+    },
+    "text": {
+      "party_name": {"default": "mdi:rename"},
+      "qr_text": {"default": "mdi:qrcode-edit"}
+    }
+  },
+  "services": {
+    "add_to_queue": {"service": "mdi:playlist-plus"},
+    "boost_queue_item": {"service": "mdi:rocket-launch"}
+  }
+}
