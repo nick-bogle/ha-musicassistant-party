@@ -25,6 +25,9 @@ jobs:
       - uses: hacs/action@main
         with:
           category: integration
+          # 'brands' only passes for integrations registered in
+          # home-assistant/brands, which custom integrations are not.
+          ignore: brands
 
   ruff:
     name: ruff
